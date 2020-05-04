@@ -342,7 +342,15 @@ namespace LinqConsoleApp
         //Znajdź pracownika z najwyższą pensją wykorzystując metodę Aggregate()
         public void Przyklad11()
         {
-            //var result11 = Emps.Aggregate();
+            var result11 = Emps.Aggregate((a,b) =>
+            {
+                if (a.Salary > b.Salary)
+                {
+                    return a;
+                }
+                else
+                    return b;
+            });
         }
 
         //Z pomocą języka LINQ i metody SelectMany wykonaj złączenie
